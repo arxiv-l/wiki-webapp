@@ -1,30 +1,47 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
-  <router-view/>
+    <a-layout>
+        <!-- 头部导航栏 -->
+        <TheHeader/>
+        <!-- 主题内容 -->
+        <a-layout>
+            <router-view/>
+        </a-layout>
+
+        <!-- 页脚 -->
+        <a-layout-footer style="text-align: center">
+            wiki项目 ©2021 Created by Ant UED
+        </a-layout-footer>
+    </a-layout>
 </template>
 
+<script lang="ts">
+    import {defineComponent} from 'vue';
+    import TheHeader from '@/components/TheHeader.vue';
+
+    export default defineComponent({
+        name: 'app',
+        components: {
+            TheHeader,
+        }
+    });
+</script>
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+    .logo {
+        float: left;
+        width: 120px;
+        height: 31px;
+        margin: 16px 24px 16px 0;
+        background: rgba(255, 255, 255, 0.3);
+    }
 
-#nav {
-  padding: 30px;
-}
+    .ant-row-rtl #components-layout-demo-top-side-2 .logo {
+        float: right;
+        margin: 16px 0 16px 24px;
+    }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
+    .site-layout-background {
+        background: #fff;
+    }
 
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
 </style>
