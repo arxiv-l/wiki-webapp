@@ -3,25 +3,22 @@
         <!-- 头部导航栏 -->
         <TheHeader/>
         <!-- 主题内容 -->
-        <a-layout>
-            <router-view/>
-        </a-layout>
-
+        <router-view/>
         <!-- 页脚 -->
-        <a-layout-footer style="text-align: center">
-            wiki项目 ©2021 Created by Ant UED
-        </a-layout-footer>
+        <TheFooter/>
     </a-layout>
 </template>
 
 <script lang="ts">
     import {defineComponent} from 'vue';
     import TheHeader from '@/components/TheHeader.vue';
+    import TheFooter from '@/components/TheFooter.vue';
 
     export default defineComponent({
         name: 'app',
         components: {
             TheHeader,
+            TheFooter,
         }
     });
 </script>
