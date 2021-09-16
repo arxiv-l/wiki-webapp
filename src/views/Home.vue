@@ -96,6 +96,7 @@
             const Ebook = ref();
             onMounted(() => {
                 axios.get("/api/ebook/getAllEbookInfo").then((response) => {
+                    console.log(response)
                     const data = response.data;
                     Ebook.value = data.data;
                 });
