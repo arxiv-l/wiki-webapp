@@ -191,7 +191,8 @@
                 modalLoading.value = true;
                 ebook.value.category1Id = categoryIds.value[0];
                 ebook.value.category2Id = categoryIds.value[1];
-                axios.post("/ebook/save", ebook.value).then((response) => {
+                console.log("添加参数：",ebook.value)
+                axios.post("/api/ebook/saveEbookData", ebook.value).then((response) => {
                     modalLoading.value = false;
                     const data = response.data; // data = commonResp
                     if (data.success) {
