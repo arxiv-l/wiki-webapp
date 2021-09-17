@@ -197,7 +197,7 @@
             };
 
             const handleDelete = (id: number) => {
-                axios.delete("/category/delete/" + id).then((response) => {
+                axios.delete("/api/category/deleteCategoryData/" + id).then((response) => {
                     const data = response.data; // data = commonResp
                     if (data.success) {
                         // 重新加载列表

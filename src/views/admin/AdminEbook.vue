@@ -134,7 +134,7 @@
                     dataIndex: 'voteCount'
                 },
                 {
-                    title: 'Action',
+                    title: '文档操作',
                     key: 'action',
                     slots: {customRender: 'action'}
                 }
@@ -156,9 +156,10 @@
                 }).then((response) => {
                     loading.value = false;
                     const data = response.data;
-                    if (data.code === 200) {
-                        ebooks.value = data.date;
+                    if (data.success) {
+                        ebooks.value = data.data;
                         // 重置分页按钮
+                        console.log(data.data)
                         pagination.value.current = params.page;
                         pagination.value.total = data.data.total;
                     } else {
@@ -224,7 +225,7 @@
             };
 
             const handleDelete = (id: number) => {
-                axios.delete("/ebook/delete/" + id).then((response) => {
+                axios.delete("/api/ebook/deleteEbookData/" + id).then((response) => {
                     const data = response.data; // data = commonResp
                     if (data.success) {
                         // 重新加载列表
