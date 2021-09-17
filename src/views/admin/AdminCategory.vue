@@ -166,12 +166,11 @@
             const modalLoading = ref(false);
             const handleModalOk = () => {
                 modalLoading.value = true;
-                axios.post("/category/save", category.value).then((response) => {
+                axios.post("/api/category/saveCategoryData", category.value).then((response) => {
                     modalLoading.value = false;
-                    const data = response.data; // data = commonResp
+                    const data = response.data;
                     if (data.success) {
                         modalVisible.value = false;
-
                         // 重新加载列表
                         handleQuery();
                     } else {
