@@ -151,6 +151,7 @@
                     params: {
                         page: params.page,
                         size: params.size,
+                        category2Id:0,
                         name: param.value.name
                     }
                 }).then((response) => {
