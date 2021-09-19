@@ -85,11 +85,12 @@
                     if (data.success) {
                         categorys = data.data;
                         console.log("原始数组：", categorys);
-                        // 加载完分类后，将侧边栏全部展开
+                        // // 加载完分类后，将侧边栏全部展开
                         openKeys.value = [];
                         for (let i = 0; i < categorys.length; i++) {
                             openKeys.value.push(categorys[i].id)
                         }
+
                         level1.value = [];
                         level1.value = Tool.array2Tree(categorys, 0);
                         console.log("树形结构：", level1.value);
