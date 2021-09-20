@@ -107,11 +107,6 @@
                     title: '名称',
                     dataIndex: 'name'
                 },
-                // {
-                //   title: '父分类',
-                //   key: 'parent',
-                //   dataIndex: 'parent'
-                // },
                 {
                     title: '顺序',
                     dataIndex: 'sort'

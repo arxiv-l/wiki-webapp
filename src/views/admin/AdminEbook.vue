@@ -1,8 +1,6 @@
 <template>
     <a-layout>
-        <a-layout-content
-                :style="{ background: '#fff', padding: '24px', margin: 0, minHeight: '280px' }"
-        >
+        <a-layout-content :style="{ background: '#fff', padding: '24px', margin: 0, minHeight: '280px' }">
             <p>
                 <a-form layout="inline" :model="param">
                     <a-form-item>
@@ -27,8 +25,7 @@
                     :data-source="ebooks"
                     :pagination="pagination"
                     :loading="loading"
-                    @change="handleTableChange"
-            >
+                    @change="handleTableChange">
                 <template #cover="{ text: cover }">
                     <img v-if="cover" :src="cover" alt="avatar"/>
                 </template>
@@ -273,7 +270,7 @@
                 // console.log(cid)
                 let result = "";
                 categorys.forEach((item: any) => {
-                    if (item.id === cid) {
+                    if (item.id == cid) {
                         // return item.name; // 注意，这里直接return不起作用
                         result = item.name;
                     }
